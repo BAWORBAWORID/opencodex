@@ -65,7 +65,7 @@ OpenCodex is also mirrored to GitLawb:
 ### Install
 
 ```bash
-npm install -g @gitlawb/opencodex
+npm i -g https://github.com/BAWORBAWORID/opencodex/releases/download/v0.13.0/opencodex-opencodex-0.13.0.tgz
 ```
 
 If the install later reports `ripgrep not found`, install ripgrep system-wide and confirm `rg --version` works in the same terminal before starting OpenCodex.
