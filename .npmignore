@@ -1,0 +1,14 @@
+node_modules/
+.git/
+.DS_Store
+*.log
+.env
+.env.local
+src/
+scripts/
+web/
+tests/
+coverage/
+.github/
+*.test.*
+*.spec.*
