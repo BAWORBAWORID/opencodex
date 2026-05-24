@@ -1,17 +1,17 @@
-# OpenCodex
+# OpenClaude
 
-OpenCodex is an open-source coding-agent CLI for cloud and local model providers.
+OpenClaude is an open-source coding-agent CLI for cloud and local model providers.
 
 Use OpenAI-compatible APIs, Gemini, GitHub Models, Codex OAuth, Codex, Ollama, Atomic Chat, and other supported backends while keeping one terminal-first workflow: prompts, tools, agents, MCP, slash commands, and streaming output.
 
-[![PR Checks](https://github.com/Gitlawb/opencodex/actions/workflows/pr-checks.yml/badge.svg?branch=main)](https://github.com/Gitlawb/opencodex/actions/workflows/pr-checks.yml)
-[![Release](https://img.shields.io/github/v/tag/Gitlawb/opencodex?label=release&color=0ea5e9)](https://github.com/Gitlawb/opencodex/tags)
-[![Discussions](https://img.shields.io/badge/discussions-open-7c3aed)](https://github.com/Gitlawb/opencodex/discussions)
+[![PR Checks](https://github.com/Gitlawb/openclaude/actions/workflows/pr-checks.yml/badge.svg?branch=main)](https://github.com/Gitlawb/openclaude/actions/workflows/pr-checks.yml)
+[![Release](https://img.shields.io/github/v/tag/Gitlawb/openclaude?label=release&color=0ea5e9)](https://github.com/Gitlawb/openclaude/tags)
+[![Discussions](https://img.shields.io/badge/discussions-open-7c3aed)](https://github.com/Gitlawb/openclaude/discussions)
 [![Security Policy](https://img.shields.io/badge/security-policy-0f766e)](SECURITY.md)
 [![License](https://img.shields.io/badge/license-MIT-2563eb)](LICENSE)
 
-OpenCodex is also mirrored to GitLawb:
-[gitlawb.com/node/repos/z6MkqDnb/opencodex](https://gitlawb.com/node/repos/z6MkqDnb/opencodex)
+OpenClaude is also mirrored to GitLawb:
+[gitlawb.com/node/repos/z6MkqDnb/openclaude](https://gitlawb.com/node/repos/z6MkqDnb/openclaude)
 
 [Quick Start](#quick-start) | [Setup Guides](#setup-guides) | [Providers](#supported-providers) | [Source Build](#source-build-and-local-development) | [VS Code Extension](#vs-code-extension) | [Sponsors](#sponsors) | [Community](#community)
 
@@ -50,9 +50,9 @@ OpenCodex is also mirrored to GitLawb:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/chart?repos=gitlawb/opencodex&type=date&legend=top-left)](https://www.star-history.com/?repos=gitlawb%2Fopencodex&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/chart?repos=gitlawb/openclaude&type=date&legend=top-left)](https://www.star-history.com/?repos=gitlawb%2Fopenclaude&type=date&legend=top-left)
 
-## Why OpenCodex
+## Why OpenClaude
 
 - Use one CLI across cloud APIs and local model backends
 - Save provider profiles inside the app with `/provider`
@@ -65,18 +65,18 @@ OpenCodex is also mirrored to GitLawb:
 ### Install
 
 ```bash
-npm i -g https://github.com/BAWORBAWORID/opencodex/releases/download/v0.13.0/opencodex-opencodex-0.13.0.tgz
+npm install -g @gitlawb/openclaude
 ```
 
-If the install later reports `ripgrep not found`, install ripgrep system-wide and confirm `rg --version` works in the same terminal before starting OpenCodex.
+If the install later reports `ripgrep not found`, install ripgrep system-wide and confirm `rg --version` works in the same terminal before starting OpenClaude.
 
 ### Start
 
 ```bash
-opencodex
+openclaude
 ```
 
-Inside OpenCodex:
+Inside OpenClaude:
 
 - run `/provider` for guided provider setup and saved profiles
 - run `/onboard-github` for GitHub Models onboarding
@@ -90,7 +90,7 @@ export CLAUDE_CODE_USE_OPENAI=1
 export OPENAI_API_KEY=sk-your-key-here
 export OPENAI_MODEL=gpt-4o
 
-opencodex
+openclaude
 ```
 
 Windows PowerShell:
@@ -100,7 +100,7 @@ $env:CLAUDE_CODE_USE_OPENAI="1"
 $env:OPENAI_API_KEY="sk-your-key-here"
 $env:OPENAI_MODEL="gpt-4o"
 
-opencodex
+openclaude
 ```
 
 ### Fastest local Ollama setup
@@ -112,7 +112,7 @@ export CLAUDE_CODE_USE_OPENAI=1
 export OPENAI_BASE_URL=http://localhost:11434/v1
 export OPENAI_MODEL=qwen2.5-coder:7b
 
-opencodex
+openclaude
 ```
 
 Windows PowerShell:
@@ -122,7 +122,7 @@ $env:CLAUDE_CODE_USE_OPENAI="1"
 $env:OPENAI_BASE_URL="http://localhost:11434/v1"
 $env:OPENAI_MODEL="qwen2.5-coder:7b"
 
-opencodex
+openclaude
 ```
 
 ## Setup Guides
@@ -147,7 +147,7 @@ Advanced and source-build guides:
 | Gemini | `/provider` or env vars | Supports API key only |
 | GitHub Models | `/onboard-github` | Interactive onboarding with saved credentials |
 | Codex OAuth | `/provider` | Opens ChatGPT sign-in in your browser and stores Codex credentials securely |
-| Codex | `/provider` | Uses existing Codex CLI auth, OpenCodex secure storage, or env credentials |
+| Codex | `/provider` | Uses existing Codex CLI auth, OpenClaude secure storage, or env credentials |
 | Gitlawb Opengateway | `/provider` or zero-config fallback | Free smart gateway at `https://opengateway.gitlawb.com/v1`; routes Xiaomi MiMo and GMI Cloud partner models by `OPENAI_MODEL` |
 | Xiaomi MiMo | `/provider` or env vars | OpenAI-compatible API at `https://api.xiaomimimo.com/v1`; uses `MIMO_API_KEY` and defaults to `mimo-v2.5-pro` |
 | Ollama | `/provider` or env vars | Local inference with no API key |
@@ -165,22 +165,22 @@ Advanced and source-build guides:
 
 ## Provider Notes
 
-OpenCodex supports multiple providers, but behavior is not identical across all of them.
+OpenClaude supports multiple providers, but behavior is not identical across all of them.
 
 - Anthropic-specific features may not exist on other providers
 - Tool quality depends heavily on the selected model
 - Smaller local models can struggle with long multi-step tool flows
-- Some providers impose lower output caps than the CLI defaults, and OpenCodex adapts where possible
+- Some providers impose lower output caps than the CLI defaults, and OpenClaude adapts where possible
 - Gitlawb Opengateway uses one OpenAI-compatible base URL. Switch between `mimo-*` and `google/gemini-3.1-flash-lite-preview` with `/model`; do not pin the base URL to `/v1/xiaomi-mimo`.
-- Xiaomi MiMo uses `api-key` header auth on the direct OpenAI-compatible route and currently does not support `/usage` reporting in OpenCodex
+- Xiaomi MiMo uses `api-key` header auth on the direct OpenAI-compatible route and currently does not support `/usage` reporting in OpenClaude
 
 For best results, use models with strong tool/function calling support.
 
 ## Agent Routing
 
-OpenCodex can route different agents to different models through settings-based routing. This is useful for cost optimization or splitting work by model strength.
+OpenClaude can route different agents to different models through settings-based routing. This is useful for cost optimization or splitting work by model strength.
 
-Add to `~/.opencodex.json`:
+Add to `~/.openclaude.json`:
 
 ```json
 {
@@ -214,7 +214,7 @@ By default, `WebSearch` works on non-Anthropic models using DuckDuckGo. This giv
 
 > **Note:** DuckDuckGo fallback works by scraping search results and may be rate-limited, blocked, or subject to DuckDuckGo's Terms of Service. If you want a more reliable supported option, configure Firecrawl.
 
-For Anthropic-native backends and Codex responses, OpenCodex keeps the native provider web search behavior.
+For Anthropic-native backends and Codex responses, OpenClaude keeps the native provider web search behavior.
 
 `WebFetch` works, but its basic HTTP plus HTML-to-markdown path can still fail on JavaScript-rendered sites or sites that block plain HTTP requests.
 
@@ -235,7 +235,7 @@ Free tier at [firecrawl.dev](https://firecrawl.dev) includes 500 credits. The ke
 
 ## Headless gRPC Server
 
-OpenCodex can be run as a headless gRPC service, allowing you to integrate its agentic capabilities (tools, bash, file editing) into other applications, CI/CD pipelines, or custom user interfaces. The server uses bidirectional streaming to send real-time text chunks, tool calls, and request permissions for sensitive commands.
+OpenClaude can be run as a headless gRPC service, allowing you to integrate its agentic capabilities (tools, bash, file editing) into other applications, CI/CD pipelines, or custom user interfaces. The server uses bidirectional streaming to send real-time text chunks, tool calls, and request permissions for sensitive commands.
 
 ### 1. Start the gRPC Server
 
@@ -262,7 +262,7 @@ In a separate terminal, run:
 npm run dev:grpc:cli
 ```
 
-*Note: The gRPC definitions are located in `src/proto/opencodex.proto`. You can use this file to generate clients in Python, Go, Rust, or any other language.*
+*Note: The gRPC definitions are located in `src/proto/openclaude.proto`. You can use this file to generate clients in Python, Go, Rust, or any other language.*
 
 ---
 
@@ -287,7 +287,7 @@ Helpful commands:
 
 ## Testing And Coverage
 
-OpenCodex uses Bun's built-in test runner for unit tests.
+OpenClaude uses Bun's built-in test runner for unit tests.
 
 Run the full unit suite:
 
@@ -326,20 +326,20 @@ Recommended contributor validation before opening a PR:
 - `bun run test:coverage` for broader unit coverage when your change affects shared runtime or provider logic
 - focused `bun test ...` runs for the files and flows you changed
 
-Coverage output is written to `coverage/lcov.info`, and OpenCodex also generates a git-activity-style heatmap at `coverage/index.html`.
+Coverage output is written to `coverage/lcov.info`, and OpenClaude also generates a git-activity-style heatmap at `coverage/index.html`.
 ## Repository Structure
 
 - `src/` - core CLI/runtime
 - `scripts/` - build, verification, and maintenance scripts
 - `docs/` - setup, contributor, and project documentation
 - `python/` - standalone Python helpers and their tests
-- `vscode-extension/opencodex-vscode/` - VS Code extension
+- `vscode-extension/openclaude-vscode/` - VS Code extension
 - `.github/` - repo automation, templates, and CI configuration
 - `bin/` - CLI launcher entrypoints
 
 ## VS Code Extension
 
-The repo includes a VS Code extension in [`vscode-extension/opencodex-vscode`](vscode-extension/opencodex-vscode) for OpenCodex launch integration, provider-aware control-center UI, and theme support.
+The repo includes a VS Code extension in [`vscode-extension/openclaude-vscode`](vscode-extension/openclaude-vscode) for OpenClaude launch integration, provider-aware control-center UI, and theme support.
 
 ## Security
 
@@ -347,8 +347,8 @@ If you believe you found a security issue, see [SECURITY.md](SECURITY.md).
 
 ## Community
 
-- Use [GitHub Discussions](https://github.com/Gitlawb/opencodex/discussions) for Q&A, ideas, and community conversation
-- Use [GitHub Issues](https://github.com/Gitlawb/opencodex/issues) for confirmed bugs and actionable feature work
+- Use [GitHub Discussions](https://github.com/Gitlawb/openclaude/discussions) for Q&A, ideas, and community conversation
+- Use [GitHub Issues](https://github.com/Gitlawb/openclaude/issues) for confirmed bugs and actionable feature work
 
 ## Contributing
 
@@ -364,9 +364,9 @@ For larger changes, open an issue first so the scope is clear before implementat
 
 ## Disclaimer
 
-OpenCodex is an independent community project and is not affiliated with, endorsed by, or sponsored by Anthropic.
+OpenClaude is an independent community project and is not affiliated with, endorsed by, or sponsored by Anthropic.
 
-OpenCodex originated from the Claude Code codebase and has since been substantially modified to support multiple providers and open use. "Claude" and "Claude Code" are trademarks of Anthropic PBC. See [LICENSE](LICENSE) for details.
+OpenClaude originated from the Claude Code codebase and has since been substantially modified to support multiple providers and open use. "Claude" and "Claude Code" are trademarks of Anthropic PBC. See [LICENSE](LICENSE) for details.
 
 ## License
 

@@ -1,6 +1,6 @@
 {
   "name": "@opencodex/opencodex",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "OpenCodex opens coding-agent workflows to any LLM — OpenAI, Gemini, DeepSeek, Ollama, and 200+ models",
   "type": "module",
   "bin": {
@@ -64,7 +64,8 @@
     "doctor:runtime:json": "bun run scripts/system-check.ts --json",
     "doctor:report": "bun run scripts/system-check.ts --out reports/doctor-runtime.json",
     "hardening:check": "bun run smoke && bun run doctor:runtime",
-    "hardening:strict": "bun run typecheck && bun run hardening:check"
+    "hardening:strict": "bun run typecheck && bun run hardening:check",
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@alcalzone/ansi-tokenize": "0.3.0",
@@ -143,7 +144,7 @@
     "typescript": "5.9.3"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "repository": {
     "type": "git",
